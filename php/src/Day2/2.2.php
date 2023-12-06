@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-$input = file_get_contents(__DIR__ . '/../../inputs/02');
+namespace Advent\Day2;
+
+$input = file_get_contents(__DIR__ . '/../../../inputs/02');
 
 class Set
 {

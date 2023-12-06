@@ -1,4 +1,9 @@
 /.idea/
-/vendor/
 /inputs/
-.phpunit.result.cache
+
+# php folder
+/php/vendor/
+/php/.phpunit.result.cache
+
+# js folder
+/js/node_modules

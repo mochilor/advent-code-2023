@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-$input = file_get_contents(__DIR__ . '/../../inputs/03');
+namespace Advent\Day3;
+
+$input = file_get_contents(__DIR__ . '/../../../inputs/03');
 
 class Character
 {

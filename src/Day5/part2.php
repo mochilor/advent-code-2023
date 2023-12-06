@@ -9,7 +9,7 @@ use Advent\Day5\Part2\Puzzle;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$input = file_get_contents('./input');
+$input = file_get_contents(__DIR__ . '/../../inputs/05');
 
 // This needs to be multi-threaded to be able to solve it before I die:
 $puzzle = new Puzzle(new Parser($input));

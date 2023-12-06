@@ -18,38 +18,36 @@ readonly class Puzzle
     {
         $maps = $this->parser->maps();
 
-        $seeds = $this->getSeeds();
+        $seedRanges = $this->getSeedRanges();
 
         $results = [];
 
-        foreach ($seeds as $seed) {
-            $results[] = $this->calculateSeed($seed, $maps);
+        foreach ($seedRanges as $seedRange) {
+            foreach ($seedRange as $seed) {
+                $results[] = $this->calculateSeed($seed, $maps);
+            }
         }
 
         return min($results);
     }
 
     /**
-     * @return int[]
+     * @return int[][]
      */
-    private function getSeeds(): array
+    private function getSeedRanges(): array
     {
-        $seedRanges = $this->parser->seeds();
-        $seeds = [];
+        $seedData = $this->parser->seeds();
+        $seedRanges = [];
 
-        for ($n = 0; $n < count($seedRanges); $n += 2) {
-            $rangeStart = $seedRanges[$n];
-            $lastItem = $rangeStart + $seedRanges[$n + 1] - 1;
-            $newSeeds = $this->getRange($rangeStart, $lastItem);
-            $seeds = [...$seeds, ...$newSeeds];
+        for ($n = 0; $n < count($seedData); $n += 2) {
+            $rangeStart = $seedData[$n];
+            $lastItem = $rangeStart + $seedData[$n + 1] - 1;
+            $seedRanges[] = $this->getRange($rangeStart, $lastItem);
         }
 
-        return $seeds;
+        return $seedRanges;
     }
 
-    /**
-     * This is not performant enough!
-     */
     private function getRange(int $rangeStart, int $lastItem): Generator
     {
         for ($n = $rangeStart; $n <= $lastItem; $n++) {

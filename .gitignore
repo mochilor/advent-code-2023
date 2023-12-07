@@ -1,9 +1,9 @@
 /.idea/
 /inputs/
 
-# php folder
+# php
 /php/vendor/
-/php/.phpunit.result.cache
+.phpunit.result.cache
 
-# js folder
+# js
 /js/node_modules

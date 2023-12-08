@@ -11,4 +11,3 @@ test('puzzle 1 solution is correct', () => {
 test('puzzle 2 solution is correct', () => {
   expect(puzzle2(input).solve()).toBe(71503);
 });
-

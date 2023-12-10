@@ -24,6 +24,7 @@ readonly class Puzzle
 
         while (!$goalReached) {
             $steps++;
+            echo $steps . "\n";
             $direction = $instructions->next();
             $goalReached = true;
 

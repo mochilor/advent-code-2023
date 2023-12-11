@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Advent\Day9;
+namespace Advent\Day10;
 
 use Advent\Day10\Part1\Parser;
 use Advent\Day10\Part1\Puzzle;
